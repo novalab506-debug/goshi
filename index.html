@@ -3,9 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>GOSHI — Dream Big. Panic Bigger.</title>
 
 <style>
+
 * {
   margin: 0;
   padding: 0;
@@ -23,7 +25,10 @@ body {
   line-height: 1.6;
 }
 
-/* NAVIGATION */
+/* =========================
+   NAVIGATION
+========================= */
+
 nav {
   position: sticky;
   top: 0;
@@ -33,6 +38,7 @@ nav {
   backdrop-filter: blur(10px);
   border-bottom: 1px solid #222;
   padding: 14px 5%;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -42,6 +48,7 @@ nav {
   display: flex;
   align-items: center;
   gap: 10px;
+
   font-weight: bold;
   font-size: 20px;
   letter-spacing: 2px;
@@ -56,6 +63,7 @@ nav {
 
 .nav-links {
   display: flex;
+  align-items: center;
   gap: 22px;
 }
 
@@ -72,13 +80,33 @@ nav {
   color: #d4af37;
 }
 
-/* HERO */
+/* X LOGO */
+
+.x-logo {
+  font-size: 24px !important;
+  font-weight: bold !important;
+  color: #fff !important;
+  text-decoration: none;
+  line-height: 1;
+}
+
+.x-logo:hover {
+  color: #d4af37 !important;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
 .hero {
   min-height: 90vh;
   padding: 80px 5%;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   text-align: center;
 }
 
@@ -89,99 +117,143 @@ nav {
 .hero-image {
   width: 220px;
   height: 220px;
+
   object-fit: cover;
   border-radius: 50%;
+
   border: 3px solid #d4af37;
+
   margin-bottom: 30px;
+
   box-shadow: 0 0 40px rgba(212,175,55,0.25);
 }
 
 .badge {
   display: inline-block;
+
   padding: 7px 14px;
+
   border: 1px solid #d4af37;
   border-radius: 30px;
+
   color: #d4af37;
+
   font-size: 12px;
   font-weight: bold;
+
   letter-spacing: 2px;
+
   margin-bottom: 20px;
 }
 
 .hero h1 {
   font-size: clamp(60px, 12vw, 120px);
+
   line-height: 0.9;
+
   letter-spacing: 5px;
+
   margin-bottom: 20px;
 }
 
 .hero h2 {
   color: #d4af37;
+
   font-size: clamp(18px, 4vw, 30px);
+
   letter-spacing: 3px;
+
   margin-bottom: 25px;
 }
 
 .hero p {
   color: #aaa;
+
   max-width: 650px;
+
   margin: 0 auto 30px;
+
   font-size: 17px;
 }
 
+
+/* =========================
+   BUTTONS
+========================= */
+
 .buttons {
   display: flex;
+
   justify-content: center;
+
   gap: 15px;
+
   flex-wrap: wrap;
 }
 
 .btn {
   display: inline-block;
+
   padding: 13px 24px;
+
   border-radius: 8px;
+
   text-decoration: none;
+
   font-weight: bold;
+
   transition: 0.3s;
 }
 
 .btn-gold {
   background: #d4af37;
+
   color: #000;
 }
 
 .btn-gold:hover {
   transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(212,175,55,0.25);
+
+  box-shadow:
+    0 8px 25px rgba(212,175,55,0.25);
 }
 
 .btn-dark {
   border: 1px solid #444;
+
   color: #fff;
 }
 
 .btn-dark:hover {
   border-color: #d4af37;
+
   color: #d4af37;
 }
 
-/* SECTIONS */
+
+/* =========================
+   SECTIONS
+========================= */
+
 section {
   padding: 90px 5%;
 }
 
 .section-inner {
   max-width: 1100px;
+
   margin: auto;
 }
 
 .section-title {
   text-align: center;
+
   margin-bottom: 50px;
 }
 
 .section-title h2 {
   font-size: clamp(35px, 7vw, 55px);
+
   margin-bottom: 10px;
 }
 
@@ -189,37 +261,56 @@ section {
   color: #888;
 }
 
-/* COMMUNITY */
+
+/* =========================
+   COMMUNITY
+========================= */
+
 .cards {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
   gap: 20px;
 }
 
 .card {
   background: #0c0c0c;
+
   border: 1px solid #242424;
+
   border-radius: 15px;
+
   padding: 30px;
+
   text-decoration: none;
+
   color: #fff;
+
   transition: 0.3s;
+
   display: block;
 }
 
 .card:hover {
   transform: translateY(-6px);
+
   border-color: #d4af37;
-  box-shadow: 0 10px 30px rgba(212,175,55,0.08);
+
+  box-shadow:
+    0 10px 30px rgba(212,175,55,0.08);
 }
 
 .card-icon {
   font-size: 35px;
+
   margin-bottom: 15px;
 }
 
 .card h3 {
   margin-bottom: 10px;
+
   font-size: 22px;
 }
 
@@ -227,21 +318,34 @@ section {
   color: #888;
 }
 
-/* TOKEN */
+
+/* =========================
+   TOKEN
+========================= */
+
 .token-box {
   max-width: 700px;
+
   margin: auto;
+
   background: #0c0c0c;
+
   border: 1px solid #242424;
+
   border-radius: 15px;
+
   overflow: hidden;
 }
 
 .token-row {
   display: flex;
+
   justify-content: space-between;
+
   gap: 20px;
+
   padding: 20px 25px;
+
   border-bottom: 1px solid #222;
 }
 
@@ -255,161 +359,248 @@ section {
 
 .token-value {
   font-weight: bold;
+
   text-align: right;
 }
 
-/* CTA */
+
+/* =========================
+   CTA
+========================= */
+
 .cta {
   text-align: center;
-  background: linear-gradient(
-    180deg,
-    #050505 0%,
-    #0d0b06 50%,
-    #050505 100%
-  );
+
+  background:
+    linear-gradient(
+      180deg,
+      #050505 0%,
+      #0d0b06 50%,
+      #050505 100%
+    );
 }
 
 .cta h2 {
   font-size: clamp(35px, 7vw, 60px);
+
   margin-bottom: 15px;
 }
 
 .cta p {
   color: #999;
+
   margin-bottom: 25px;
 }
 
-/* FOOTER */
+
+/* =========================
+   FOOTER
+========================= */
+
 footer {
   padding: 35px 5%;
+
   text-align: center;
+
   border-top: 1px solid #222;
+
   color: #666;
+
   font-size: 13px;
 }
 
-/* STORY MODAL */
+
+/* =========================
+   STORY MODAL
+========================= */
+
 .story-modal {
   position: fixed;
+
   inset: 0;
+
   z-index: 2000;
+
   background: rgba(0,0,0,0.88);
+
   backdrop-filter: blur(12px);
+
   display: flex;
+
   align-items: center;
+
   justify-content: center;
+
   padding: 20px;
+
   opacity: 0;
+
   visibility: hidden;
+
   transition: 0.3s ease;
 }
 
 .story-modal.active {
   opacity: 1;
+
   visibility: visible;
 }
 
 .story-window {
   position: relative;
+
   width: 100%;
+
   max-width: 900px;
+
   max-height: 90vh;
+
   overflow-y: auto;
+
   background: #090909;
+
   border: 1px solid #d4af37;
+
   border-radius: 20px;
+
   padding: 55px 35px 35px;
-  box-shadow: 0 0 60px rgba(212,175,55,0.15);
-  transform: translateY(30px) scale(0.97);
+
+  box-shadow:
+    0 0 60px rgba(212,175,55,0.15);
+
+  transform:
+    translateY(30px)
+    scale(0.97);
+
   transition: 0.3s ease;
 }
 
 .story-modal.active .story-window {
-  transform: translateY(0) scale(1);
+  transform:
+    translateY(0)
+    scale(1);
 }
 
 .close-story {
   position: absolute;
+
   top: 15px;
+
   right: 18px;
+
   width: 40px;
+
   height: 40px;
+
   border-radius: 50%;
+
   border: 1px solid #333;
+
   background: #111;
+
   color: #fff;
+
   font-size: 24px;
+
   cursor: pointer;
+
   transition: 0.3s;
 }
 
 .close-story:hover {
   color: #d4af37;
+
   border-color: #d4af37;
 }
 
 .story-content {
   max-width: 800px;
+
   margin: auto;
 }
 
 .story-content .story-label {
   color: #d4af37;
+
   font-size: 12px;
+
   font-weight: bold;
+
   letter-spacing: 3px;
+
   margin-bottom: 10px;
 }
 
 .story-content h2 {
   font-size: clamp(40px, 8vw, 65px);
+
   line-height: 1;
+
   margin-bottom: 20px;
 }
 
 .story-content .intro {
   color: #d4af37;
+
   font-size: 20px;
+
   margin-bottom: 30px;
 }
 
 .story-content h3 {
   font-size: 28px;
+
   margin-bottom: 10px;
 }
 
 .story-content p {
   color: #aaa;
+
   font-size: 16px;
+
   margin-bottom: 18px;
 }
 
 .story-cards {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
   gap: 15px;
+
   margin-top: 35px;
 }
 
 .story-card {
   padding: 22px;
+
   background: #0f0f0f;
+
   border: 1px solid #242424;
+
   border-radius: 12px;
 }
 
 .story-card h4 {
   margin-bottom: 8px;
+
   font-size: 18px;
 }
 
 .story-card p {
   font-size: 14px;
+
   margin-bottom: 0;
 }
 
-/* RESPONSIVE */
+
+/* =========================
+   RESPONSIVE
+========================= */
+
 @media (max-width: 800px) {
+
   .cards {
     grid-template-columns: 1fr;
   }
@@ -432,11 +623,17 @@ footer {
 
   .hero-image {
     width: 180px;
+
     height: 180px;
   }
+
 }
 
+
+/* MOBILE */
+
 @media (max-width: 500px) {
+
   nav {
     padding: 10px 4%;
   }
@@ -447,6 +644,7 @@ footer {
 
   .logo img {
     width: 35px;
+
     height: 35px;
   }
 
@@ -458,253 +656,564 @@ footer {
     font-size: 10px;
   }
 
+  .x-logo {
+    font-size: 21px !important;
+  }
+
   section {
     padding: 70px 5%;
   }
 
   .story-window {
-    padding: 50px 22px 25px;
+    padding:
+      50px 22px 25px;
   }
+
 }
+
 </style>
 </head>
 
+
 <body>
 
-<!-- NAVIGATION -->
+
+<!-- =========================
+     NAVIGATION
+========================= -->
+
 <nav>
+
   <div class="logo">
-    <img src="GOSHI.jpeg" alt="GOSHI">
+
+    <img
+      src="GOSHI.jpeg"
+      alt="GOSHI"
+    >
+
     GOSHI
+
   </div>
+
 
   <div class="nav-links">
-    <a href="javascript:void(0)" onclick="openStory()">Story</a>
-    <a href="#token">Token</a>
-    <a href="#community">Community</a>
-    <a href="https://x.com/GOSHICRYPTO" target="_blank">X</a>
+
+    <a
+      href="javascript:void(0)"
+      onclick="openStory()"
+    >
+      Story
+    </a>
+
+    <a href="#token">
+      Token
+    </a>
+
+    <a href="#community">
+      Community
+    </a>
+
+    <a
+      href="https://x.com/GOSHICRYPTO"
+      target="_blank"
+      class="x-logo"
+      aria-label="GOSHI on X"
+    >
+      𝕏
+    </a>
+
   </div>
+
 </nav>
 
-<!-- HERO -->
+
+
+<!-- =========================
+     HERO
+========================= -->
+
 <header class="hero">
+
   <div class="hero-content">
 
-    <img src="GOSHI.jpeg" alt="GOSHI Bear" class="hero-image">
 
-    <div class="badge">BUILDING ON SOLANA</div>
+    <img
+      src="GOSHI.jpeg"
+      alt="GOSHI Bear"
+      class="hero-image"
+    >
 
-    <h1>GOSHI</h1>
 
-    <h2>DREAM BIG. PANIC BIGGER.</h2>
+    <div class="badge">
+      BUILDING ON SOLANA
+    </div>
+
+
+    <h1>
+      GOSHI
+    </h1>
+
+
+    <h2>
+      DREAM BIG. PANIC BIGGER.
+    </h2>
+
 
     <p>
       GOSHI was just a bear with a big dream.
       Then he discovered crypto. Now he refuses to leave.
     </p>
 
+
     <div class="buttons">
-      <a href="https://x.com/GOSHICRYPTO" target="_blank" class="btn btn-gold">
-        Follow on X
+
+
+      <a
+        href="https://x.com/GOSHICRYPTO"
+        target="_blank"
+        class="btn btn-gold"
+      >
+        Join the Community
       </a>
 
-      <a href="#token" class="btn btn-dark">
-        Explore GOSHI
+
+      <a
+        href="#token"
+        class="btn btn-dark"
+      >
+        Discover GOSHI
       </a>
+
+
     </div>
 
   </div>
+
 </header>
 
-<!-- COMMUNITY -->
+
+
+<!-- =========================
+     COMMUNITY
+========================= -->
+
 <section id="community">
+
   <div class="section-inner">
 
+
     <div class="section-title">
-      <h2>Community</h2>
-      <p>Memes, chaos and bigger plans.</p>
+
+      <h2>
+        Community
+      </h2>
+
+      <p>
+        Memes, chaos and bigger plans.
+      </p>
+
     </div>
+
 
     <div class="cards">
 
-      <a href="https://x.com/GOSHICRYPTO" target="_blank" class="card">
-        <div class="card-icon">🐻</div>
-        <h3>Community</h3>
+
+      <!-- COMMUNITY CARD -->
+
+      <a
+        href="https://x.com/GOSHICRYPTO"
+        target="_blank"
+        class="card"
+      >
+
+        <div class="card-icon">
+          🐻
+        </div>
+
+        <h3>
+          Community
+        </h3>
+
         <p>
-          Join the GOSHI community on X and follow the journey.
+          Join the GOSHI community on X
+          and follow the journey.
         </p>
+
       </a>
 
-      <a href="https://solana.com/" target="_blank" class="card">
-        <div class="card-icon">⚡</div>
-        <h3>Solana</h3>
+
+      <!-- SOLANA CARD -->
+
+      <a
+        href="https://solana.com/"
+        target="_blank"
+        class="card"
+      >
+
+        <div class="card-icon">
+          ⚡
+        </div>
+
+        <h3>
+          Solana
+        </h3>
+
         <p>
-          Fast, global and built for the next chapter.
+          Fast, global and built for
+          the next chapter.
         </p>
+
       </a>
 
-      <a href="#token" class="card">
-        <div class="card-icon">🚀</div>
-        <h3>Bigger Plans</h3>
+
+      <!-- BIGGER PLANS CARD -->
+
+      <a
+        href="#token"
+        class="card"
+      >
+
+        <div class="card-icon">
+          🚀
+        </div>
+
+        <h3>
+          Bigger Plans
+        </h3>
+
         <p>
-          GOSHI starts with a simple idea. The community decides how far it goes.
+          GOSHI starts with a simple idea.
+          The community decides how far it goes.
         </p>
+
       </a>
+
 
     </div>
+
   </div>
+
 </section>
 
-<!-- TOKEN -->
+
+
+<!-- =========================
+     TOKEN
+========================= -->
+
 <section id="token">
+
   <div class="section-inner">
 
+
     <div class="section-title">
-      <h2>The Token</h2>
-      <p>Simple. Transparent. Built on Solana.</p>
+
+      <h2>
+        The Token
+      </h2>
+
+      <p>
+        Simple. Transparent. Built on Solana.
+      </p>
+
     </div>
+
 
     <div class="token-box">
 
-      <div class="token-row">
-        <span class="token-label">Token</span>
-        <span class="token-value">$GOSHI</span>
-      </div>
 
       <div class="token-row">
-        <span class="token-label">Network</span>
-        <span class="token-value">Solana</span>
+
+        <span class="token-label">
+          Token
+        </span>
+
+        <span class="token-value">
+          $GOSHI
+        </span>
+
       </div>
 
-      <div class="token-row">
-        <span class="token-label">Total Supply</span>
-        <span class="token-value">1,000,000,000</span>
-      </div>
 
       <div class="token-row">
-        <span class="token-label">Holder Reward Tax</span>
-        <span class="token-value">3%</span>
+
+        <span class="token-label">
+          Network
+        </span>
+
+        <span class="token-value">
+          Solana
+        </span>
+
       </div>
 
+
       <div class="token-row">
-        <span class="token-label">Status</span>
-        <span class="token-value">Launching Soon</span>
+
+        <span class="token-label">
+          Total Supply
+        </span>
+
+        <span class="token-value">
+          1,000,000,000
+        </span>
+
       </div>
+
+
+      <div class="token-row">
+
+        <span class="token-label">
+          Holder Reward Tax
+        </span>
+
+        <span class="token-value">
+          3%
+        </span>
+
+      </div>
+
+
+      <div class="token-row">
+
+        <span class="token-label">
+          Status
+        </span>
+
+        <span class="token-value">
+          Launching Soon
+        </span>
+
+      </div>
+
 
     </div>
+
   </div>
+
 </section>
 
-<!-- CTA -->
+
+
+<!-- =========================
+     CTA
+========================= -->
+
 <section class="cta">
+
   <div class="section-inner">
 
-    <h2>Dream Big.</h2>
+
+    <h2>
+      Dream Big.
+    </h2>
+
 
     <p>
       GOSHI is just getting started.
     </p>
 
-    <a href="https://x.com/GOSHICRYPTO" target="_blank" class="btn btn-gold">
+
+    <a
+      href="https://x.com/GOSHICRYPTO"
+      target="_blank"
+      class="btn btn-gold"
+    >
       Follow GOSHI on X
     </a>
 
+
   </div>
+
 </section>
 
-<!-- FOOTER -->
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
 <footer>
+
   © 2026 GOSHI. Built on Solana.
+
 </footer>
 
 
-<!-- STORY MODAL -->
-<div class="story-modal" id="storyModal" onclick="closeStoryOutside(event)">
+
+<!-- =========================
+     STORY WINDOW
+========================= -->
+
+<div
+  class="story-modal"
+  id="storyModal"
+  onclick="closeStoryOutside(event)"
+>
+
 
   <div class="story-window">
 
-    <button class="close-story" onclick="closeStory()" aria-label="Close">
+
+    <button
+      class="close-story"
+      onclick="closeStory()"
+      aria-label="Close"
+    >
       ×
     </button>
 
+
     <div class="story-content">
 
-      <div class="story-label">THE STORY</div>
 
-      <h2>The GOSHI Story</h2>
+      <div class="story-label">
+        THE STORY
+      </div>
+
+
+      <h2>
+        The GOSHI Story
+      </h2>
+
 
       <p class="intro">
         Every legend starts somewhere.
       </p>
 
-      <h3>GOSHI was just a bear.</h3>
+
+      <h3>
+        GOSHI was just a bear.
+      </h3>
+
 
       <p>
-        Then he discovered crypto. Now he refuses to leave.
+        Then he discovered crypto.
+        Now he refuses to leave.
       </p>
 
+
       <p>
-        Built on Solana, GOSHI is about community, memes,
-        ambition and bigger plans.
+        Built on Solana, GOSHI is about
+        community, memes, ambition and
+        bigger plans.
       </p>
+
 
       <div class="story-cards">
 
-        <div class="story-card">
-          <h4>🐻 Community</h4>
-          <p>
-            Memes, chaos and a community built around GOSHI.
-          </p>
-        </div>
 
         <div class="story-card">
-          <h4>⚡ Solana</h4>
+
+          <h4>
+            🐻 Community
+          </h4>
+
           <p>
-            Fast, global and built for the next chapter.
+            Memes, chaos and a community
+            built around GOSHI.
           </p>
+
         </div>
 
+
         <div class="story-card">
-          <h4>🚀 Bigger Plans</h4>
+
+          <h4>
+            ⚡ Solana
+          </h4>
+
+          <p>
+            Fast, global and built for
+            the next chapter.
+          </p>
+
+        </div>
+
+
+        <div class="story-card">
+
+          <h4>
+            🚀 Bigger Plans
+          </h4>
+
           <p>
             GOSHI starts with a simple idea.
             The community decides how far it goes.
           </p>
+
         </div>
+
 
       </div>
 
     </div>
 
   </div>
+
 </div>
 
+
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
 
 <script>
 
 function openStory() {
-  document.getElementById("storyModal").classList.add("active");
+
+  document
+    .getElementById("storyModal")
+    .classList
+    .add("active");
+
   document.body.style.overflow = "hidden";
+
 }
+
 
 function closeStory() {
-  document.getElementById("storyModal").classList.remove("active");
+
+  document
+    .getElementById("storyModal")
+    .classList
+    .remove("active");
+
   document.body.style.overflow = "";
+
 }
+
 
 function closeStoryOutside(event) {
-  if (event.target === document.getElementById("storyModal")) {
+
+  if (
+    event.target ===
+    document.getElementById("storyModal")
+  ) {
+
     closeStory();
+
   }
+
 }
 
-document.addEventListener("keydown", function(event) {
-  if (event.key === "Escape") {
-    closeStory();
+
+document.addEventListener(
+  "keydown",
+  function(event) {
+
+    if (event.key === "Escape") {
+
+      closeStory();
+
+    }
+
   }
-});
+);
 
 </script>
+
 
 </body>
 </html>
