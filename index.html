@@ -1,21 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>GOSHI — Dream Big. Panic Bigger.</title>
-
-  <meta
-    name="description"
-    content="GOSHI is a community-driven token built on Solana. Hold $GOSHI and participate in SOL holder rewards."
-  />
+  <meta name="description" content="GOSHI is a community-driven meme token built on Solana. Dream Big. Panic Bigger.">
 
   <style>
     * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
     }
 
     html {
@@ -34,31 +30,33 @@
       text-decoration: none;
     }
 
-    /* NAVIGATION */
+    .container {
+      width: min(1100px, 92%);
+      margin: auto;
+    }
+
+    /* NAV */
 
     nav {
       position: sticky;
       top: 0;
       z-index: 100;
-      width: 100%;
       background: rgba(5, 5, 5, 0.94);
+      border-bottom: 1px solid #242424;
       backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(212, 175, 55, 0.2);
     }
 
-    .nav-container {
-      max-width: 1200px;
-      margin: auto;
-      padding: 18px 24px;
+    .nav-inner {
+      height: 70px;
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
     }
 
     .logo {
-      font-size: 1.4rem;
+      font-size: 24px;
       font-weight: 900;
-      letter-spacing: 3px;
+      letter-spacing: 2px;
       color: #d4af37;
     }
 
@@ -66,276 +64,155 @@
       display: flex;
       align-items: center;
       gap: 28px;
-      font-size: 0.95rem;
-      font-weight: 700;
     }
 
     .nav-links a {
-      transition: 0.25s ease;
+      color: #ddd;
+      font-size: 14px;
+      font-weight: 700;
+      transition: 0.2s;
     }
 
     .nav-links a:hover {
       color: #d4af37;
     }
 
-    .x-icon {
-      font-size: 1.3rem;
-      font-weight: 900;
+    .x-link {
+      font-size: 25px !important;
+      color: #fff !important;
+    }
+
+    .x-link:hover {
+      color: #d4af37 !important;
     }
 
     /* HERO */
 
     .hero {
-      min-height: 92vh;
+      min-height: 88vh;
       display: flex;
       align-items: center;
-      justify-content: center;
       text-align: center;
-      padding: 80px 20px;
-      background:
-        radial-gradient(circle at center, rgba(212, 175, 55, 0.11), transparent 45%),
-        #050505;
+      position: relative;
+      overflow: hidden;
     }
 
     .hero-content {
-      max-width: 900px;
-      margin: auto;
+      width: 100%;
     }
 
     .hero-image {
-      width: clamp(150px, 30vw, 260px);
-      height: clamp(150px, 30vw, 260px);
+      width: 190px;
+      height: 190px;
       object-fit: cover;
       border-radius: 50%;
       border: 4px solid #d4af37;
       box-shadow: 0 0 45px rgba(212, 175, 55, 0.25);
-      margin-bottom: 28px;
+      margin-bottom: 30px;
     }
 
     .eyebrow {
       color: #d4af37;
-      font-size: 0.9rem;
+      font-size: 13px;
       font-weight: 800;
       letter-spacing: 4px;
       margin-bottom: 12px;
     }
 
-    .hero h1 {
-      font-size: clamp(4rem, 13vw, 9rem);
+    h1 {
+      font-size: clamp(65px, 15vw, 150px);
       line-height: 0.9;
       font-weight: 1000;
-      letter-spacing: -5px;
+      letter-spacing: -6px;
       color: #d4af37;
-      margin-bottom: 20px;
     }
 
     .hero h2 {
-      font-size: clamp(1.5rem, 4vw, 2.5rem);
+      margin-top: 25px;
+      font-size: clamp(20px, 4vw, 34px);
       letter-spacing: 2px;
-      margin-bottom: 14px;
     }
 
-    .hero-subtitle {
+    .hero p {
       max-width: 650px;
-      margin: auto;
-      color: #bcbcbc;
-      font-size: 1.05rem;
+      margin: 18px auto 30px;
+      color: #aaa;
+      font-size: 17px;
     }
 
-    .reward-headline {
-      margin-top: 30px;
-      font-size: clamp(1.5rem, 4vw, 2.3rem);
-      font-weight: 900;
-      color: #d4af37;
-      letter-spacing: 1px;
-    }
-
-    .reward-subtitle {
-      margin-top: 5px;
-      color: #e5e5e5;
-      font-size: 1rem;
-    }
-
-    .hero-buttons {
-      margin-top: 32px;
+    .buttons {
       display: flex;
       justify-content: center;
-      flex-wrap: wrap;
       gap: 14px;
+      flex-wrap: wrap;
     }
 
     .btn {
       display: inline-block;
-      padding: 14px 25px;
+      padding: 14px 24px;
       border-radius: 8px;
       font-weight: 900;
-      transition: 0.25s ease;
+      font-size: 14px;
+      transition: 0.2s;
       border: 1px solid #d4af37;
     }
 
-    .btn-primary {
+    .btn-gold {
       background: #d4af37;
       color: #050505;
     }
 
-    .btn-primary:hover {
+    .btn-gold:hover {
       transform: translateY(-2px);
-      box-shadow: 0 8px 25px rgba(212, 175, 55, 0.25);
+      box-shadow: 0 8px 25px rgba(212, 175, 55, 0.2);
     }
 
-    .btn-secondary {
+    .btn-dark {
       background: transparent;
       color: #d4af37;
     }
 
-    .btn-secondary:hover {
-      background: rgba(212, 175, 55, 0.1);
+    .btn-dark:hover {
+      background: #171717;
     }
 
-    /* GENERAL */
+    /* SECTIONS */
 
     section {
-      padding: 90px 20px;
-    }
-
-    .section-container {
-      max-width: 1100px;
-      margin: auto;
+      padding: 90px 0;
+      border-top: 1px solid #191919;
     }
 
     .section-title {
       text-align: center;
-      font-size: clamp(2rem, 5vw, 3.5rem);
-      margin-bottom: 15px;
-      font-weight: 900;
+      margin-bottom: 45px;
     }
 
     .section-title span {
       color: #d4af37;
-    }
-
-    .section-intro {
-      max-width: 680px;
-      margin: 0 auto 45px;
-      text-align: center;
-      color: #aaa;
-    }
-
-    /* REWARDS */
-
-    .rewards-section {
-      background: #080808;
-      border-top: 1px solid rgba(212, 175, 55, 0.15);
-      border-bottom: 1px solid rgba(212, 175, 55, 0.15);
-    }
-
-    .reward-main-card {
-      max-width: 850px;
-      margin: auto;
-      padding: clamp(30px, 6vw, 60px);
-      text-align: center;
-      border: 1px solid rgba(212, 175, 55, 0.5);
-      border-radius: 18px;
-      background:
-        radial-gradient(circle at top, rgba(212, 175, 55, 0.12), transparent 55%),
-        #0b0b0b;
-      box-shadow: 0 0 50px rgba(212, 175, 55, 0.07);
-    }
-
-    .reward-badge {
-      display: inline-block;
-      padding: 8px 16px;
-      border-radius: 999px;
-      border: 1px solid #d4af37;
-      color: #d4af37;
-      font-size: 0.8rem;
+      font-size: 12px;
       font-weight: 900;
-      letter-spacing: 2px;
-      margin-bottom: 22px;
+      letter-spacing: 4px;
     }
 
-    .reward-main-card h3 {
-      font-size: clamp(2rem, 6vw, 4rem);
-      line-height: 1;
-      margin-bottom: 18px;
-    }
-
-    .reward-main-card h3 span {
-      color: #d4af37;
-    }
-
-    .reward-main-card p {
-      max-width: 650px;
-      margin: auto;
-      color: #aaa;
-    }
-
-    .reward-flow {
-      margin-top: 45px;
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 12px;
-      align-items: center;
-    }
-
-    .flow-step {
-      min-height: 110px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: 15px;
-      border: 1px solid rgba(212, 175, 55, 0.25);
-      border-radius: 12px;
-      background: #050505;
-    }
-
-    .flow-number {
-      font-size: 0.75rem;
-      color: #d4af37;
-      font-weight: 900;
-      margin-bottom: 6px;
-    }
-
-    .flow-step strong {
-      font-size: 1rem;
-    }
-
-    .flow-arrow {
-      display: none;
-      color: #d4af37;
-      font-size: 1.5rem;
-      font-weight: 900;
-    }
-
-    .reward-note {
-      margin-top: 30px;
-      font-size: 0.85rem;
-      color: #777;
+    .section-title h2 {
+      font-size: clamp(35px, 7vw, 60px);
+      margin-top: 8px;
     }
 
     /* STORY */
 
-    .story {
+    .story-text {
+      max-width: 750px;
+      margin: auto;
       text-align: center;
+      color: #aaa;
+      font-size: 18px;
     }
 
     .story-button {
-      margin-top: 25px;
-      background: transparent;
-      border: 1px solid #d4af37;
-      color: #d4af37;
-      padding: 13px 24px;
-      border-radius: 8px;
-      font-weight: 900;
-      cursor: pointer;
-      font-size: 1rem;
-      transition: 0.25s ease;
-    }
-
-    .story-button:hover {
-      background: #d4af37;
-      color: #050505;
+      margin-top: 28px;
+      text-align: center;
     }
 
     /* COMMUNITY */
@@ -343,31 +220,26 @@
     .cards {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-      margin-top: 40px;
+      gap: 18px;
     }
 
     .card {
-      padding: 30px;
-      border: 1px solid rgba(212, 175, 55, 0.25);
+      border: 1px solid #292929;
       border-radius: 14px;
-      background: #0a0a0a;
-      transition: 0.25s ease;
+      padding: 30px;
+      background: #0b0b0b;
+      transition: 0.2s;
     }
 
     .card:hover {
-      transform: translateY(-5px);
+      transform: translateY(-4px);
       border-color: #d4af37;
-    }
-
-    .card-icon {
-      font-size: 2rem;
-      margin-bottom: 15px;
     }
 
     .card h3 {
       color: #d4af37;
       margin-bottom: 10px;
+      font-size: 22px;
     }
 
     .card p {
@@ -376,16 +248,13 @@
 
     /* TOKEN */
 
-    .token-section {
-      background: #080808;
-    }
-
     .token-box {
       max-width: 800px;
       margin: auto;
-      border: 1px solid rgba(212, 175, 55, 0.35);
-      border-radius: 15px;
+      border: 1px solid #292929;
+      border-radius: 14px;
       overflow: hidden;
+      background: #0b0b0b;
     }
 
     .token-row {
@@ -393,56 +262,67 @@
       justify-content: space-between;
       gap: 20px;
       padding: 20px 25px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+      border-bottom: 1px solid #202020;
     }
 
     .token-row:last-child {
       border-bottom: none;
     }
 
-    .token-label {
+    .token-row span:first-child {
       color: #888;
     }
 
-    .token-value {
-      font-weight: 900;
+    .token-row span:last-child {
+      font-weight: 800;
       text-align: right;
     }
 
-    .gold {
+    .live {
       color: #d4af37;
+    }
+
+    .mint {
+      font-size: 13px;
+      word-break: break-all;
+      color: #d4af37;
+    }
+
+    .token-actions {
+      margin-top: 28px;
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
     }
 
     /* CTA */
 
     .cta {
       text-align: center;
-      padding: 110px 20px;
-      background:
-        radial-gradient(circle at center, rgba(212, 175, 55, 0.1), transparent 50%),
-        #050505;
+      padding: 110px 0;
     }
 
     .cta h2 {
-      font-size: clamp(3rem, 8vw, 6rem);
-      line-height: 1;
+      font-size: clamp(45px, 8vw, 80px);
       color: #d4af37;
-      margin-bottom: 18px;
+      line-height: 1;
     }
 
     .cta p {
-      color: #aaa;
-      font-size: 1.1rem;
+      margin-top: 15px;
+      color: #999;
+      font-size: 18px;
     }
 
     /* FOOTER */
 
     footer {
+      border-top: 1px solid #191919;
+      padding: 30px 0;
       text-align: center;
-      padding: 30px 20px;
-      border-top: 1px solid rgba(212, 175, 55, 0.15);
       color: #666;
-      font-size: 0.85rem;
+      font-size: 13px;
     }
 
     /* MODAL */
@@ -451,87 +331,79 @@
       display: none;
       position: fixed;
       inset: 0;
-      z-index: 1000;
-      background: rgba(0, 0, 0, 0.82);
+      z-index: 200;
+      background: rgba(0, 0, 0, 0.85);
       padding: 20px;
       align-items: center;
       justify-content: center;
     }
 
     .modal-content {
-      position: relative;
       width: min(700px, 100%);
       max-height: 90vh;
       overflow-y: auto;
       background: #0b0b0b;
       border: 1px solid #d4af37;
       border-radius: 15px;
-      padding: 40px;
-      box-shadow: 0 0 60px rgba(212, 175, 55, 0.15);
+      padding: 35px;
+      position: relative;
+    }
+
+    .close {
+      position: absolute;
+      top: 12px;
+      right: 18px;
+      font-size: 30px;
+      color: #aaa;
+      cursor: pointer;
+    }
+
+    .close:hover {
+      color: #d4af37;
     }
 
     .modal-content h2 {
       color: #d4af37;
-      font-size: 2rem;
-      margin-bottom: 20px;
+      margin-bottom: 18px;
+      font-size: 35px;
     }
 
     .modal-content h3 {
-      margin-top: 25px;
       color: #d4af37;
+      margin-top: 25px;
+      margin-bottom: 6px;
     }
 
     .modal-content p {
       color: #aaa;
-      margin-top: 10px;
-    }
-
-    .close-modal {
-      position: absolute;
-      top: 15px;
-      right: 20px;
-      border: none;
-      background: transparent;
-      color: #fff;
-      font-size: 2rem;
-      cursor: pointer;
     }
 
     /* MOBILE */
 
     @media (max-width: 750px) {
-      .nav-container {
-        padding: 15px 16px;
-      }
-
       .nav-links {
-        gap: 14px;
-        font-size: 0.8rem;
+        gap: 15px;
       }
 
-      .logo {
-        font-size: 1.1rem;
+      .nav-links a {
+        font-size: 12px;
+      }
+
+      .x-link {
+        font-size: 22px !important;
       }
 
       .hero {
-        min-height: auto;
-        padding: 70px 18px 85px;
+        min-height: 82vh;
       }
 
-      .hero h1 {
+      .hero-image {
+        width: 150px;
+        height: 150px;
+      }
+
+      h1 {
         letter-spacing: -3px;
-      }
-
-      .hero-subtitle {
-        font-size: 0.95rem;
-      }
-
-      section {
-        padding: 70px 18px;
-      }
-
-      .reward-flow {
-        grid-template-columns: 1fr;
       }
 
       .cards {
@@ -539,16 +411,16 @@
       }
 
       .token-row {
-        padding: 17px;
+        flex-direction: column;
+        gap: 6px;
       }
 
-      .token-label,
-      .token-value {
-        font-size: 0.9rem;
+      .token-row span:last-child {
+        text-align: left;
       }
 
       .modal-content {
-        padding: 30px 22px;
+        padding: 28px 22px;
       }
     }
   </style>
@@ -556,10 +428,10 @@
 
 <body>
 
-  <!-- NAVIGATION -->
+  <!-- NAV -->
 
   <nav>
-    <div class="nav-container">
+    <div class="container nav-inner">
 
       <a href="#" class="logo">GOSHI</a>
 
@@ -572,11 +444,9 @@
           href="https://x.com/GOSHICRYPTO"
           target="_blank"
           rel="noopener noreferrer"
-          class="x-icon"
+          class="x-link"
           aria-label="GOSHI on X"
-        >
-          𝕏
-        </a>
+        >𝕏</a>
       </div>
 
     </div>
@@ -586,144 +456,83 @@
   <!-- HERO -->
 
   <header class="hero">
-
-    <div class="hero-content">
+    <div class="container hero-content">
 
       <img
         src="GOSHI.jpeg"
-        alt="GOSHI Bear"
+        alt="GOSHI"
         class="hero-image"
-      />
+      >
 
-      <div class="eyebrow">
-        BUILDING ON SOLANA
-      </div>
+      <div class="eyebrow">LIVE ON SOLANA</div>
 
       <h1>GOSHI</h1>
 
       <h2>DREAM BIG. PANIC BIGGER.</h2>
 
-      <p class="hero-subtitle">
+      <p>
         GOSHI was just a bear.
-        Then he discovered crypto.
-        Now he refuses to leave.
+        Then he discovered crypto. Now he refuses to leave.
       </p>
 
-      <div class="reward-headline">
-        HOLD $GOSHI. EARN SOL.
-      </div>
-
-      <p class="reward-subtitle">
-        A 3% holder reward tax fuels SOL rewards for the GOSHI community.
-      </p>
-
-      <div class="hero-buttons">
+      <div class="buttons">
 
         <a
           href="https://x.com/GOSHICRYPTO"
           target="_blank"
           rel="noopener noreferrer"
-          class="btn btn-primary"
+          class="btn btn-gold"
         >
-          JOIN THE COMMUNITY
+          Join the Community
         </a>
 
         <a
           href="#token"
-          class="btn btn-secondary"
+          class="btn btn-dark"
         >
-          DISCOVER GOSHI
+          Discover GOSHI
         </a>
 
       </div>
 
     </div>
-
   </header>
-
-
-  <!-- REWARDS -->
-
-  <section class="rewards-section" id="rewards">
-
-    <div class="section-container">
-
-      <div class="reward-main-card">
-
-        <div class="reward-badge">
-          3% HOLDER REWARD TAX
-        </div>
-
-        <h3>
-          HOLD GOSHI.<br />
-          <span>EARN SOL.</span>
-        </h3>
-
-        <p>
-          GOSHI is built with a holder reward mechanism designed
-          to distribute rewards in SOL to eligible holders.
-          The reward system is part of the token's core design.
-        </p>
-
-        <div class="reward-flow">
-
-          <div class="flow-step">
-            <div class="flow-number">01</div>
-            <strong>BUY $GOSHI</strong>
-          </div>
-
-          <div class="flow-step">
-            <div class="flow-number">02</div>
-            <strong>HOLD</strong>
-          </div>
-
-          <div class="flow-step">
-            <div class="flow-number">03</div>
-            <strong>3% REWARD TAX</strong>
-          </div>
-
-          <div class="flow-step">
-            <div class="flow-number">04</div>
-            <strong>SOL REWARDS</strong>
-          </div>
-
-        </div>
-
-        <p class="reward-note">
-          Rewards depend on network activity, transfers and the
-          number of eligible holders. No fixed return is promised.
-        </p>
-
-      </div>
-
-    </div>
-
-  </section>
 
 
   <!-- STORY -->
 
-  <section class="story" id="story">
+  <section id="story">
 
-    <div class="section-container">
+    <div class="container">
 
-      <div class="eyebrow">
-        THE STORY
+      <div class="section-title">
+        <span>THE STORY</span>
+        <h2>The GOSHI Story</h2>
       </div>
 
-      <h2 class="section-title">
-        The GOSHI <span>Story</span>
-      </h2>
+      <div class="story-text">
 
-      <p class="section-intro">
-        Every legend starts somewhere.
-        GOSHI starts with a bear, a dream and a questionable
-        understanding of crypto.
-      </p>
+        <p>
+          Every legend starts somewhere.
+        </p>
 
-      <button class="story-button" id="openStory">
-        READ THE STORY
-      </button>
+        <p style="margin-top: 12px;">
+          GOSHI was just a bear.
+          Then he discovered crypto. Now he refuses to leave.
+        </p>
+
+        <div class="story-button">
+
+          <button
+            class="btn btn-gold"
+            onclick="openModal()"
+          >
+            Read the Story
+          </button>
+
+        </div>
+
+      </div>
 
     </div>
 
@@ -734,20 +543,12 @@
 
   <section id="community">
 
-    <div class="section-container">
+    <div class="container">
 
-      <div class="eyebrow" style="text-align:center;">
-        THE COMMUNITY
+      <div class="section-title">
+        <span>THE COMMUNITY</span>
+        <h2>Built Together</h2>
       </div>
-
-      <h2 class="section-title">
-        Built for <span>GOSHI</span>
-      </h2>
-
-      <p class="section-intro">
-        Memes, ambition, chaos and a community that decides
-        how far GOSHI goes.
-      </p>
 
       <div class="cards">
 
@@ -757,15 +558,11 @@
           rel="noopener noreferrer"
           class="card"
         >
-          <div class="card-icon">🐻</div>
-
           <h3>Community</h3>
-
           <p>
             Memes, chaos and a community built around GOSHI.
           </p>
         </a>
-
 
         <a
           href="https://solana.com/"
@@ -773,27 +570,21 @@
           rel="noopener noreferrer"
           class="card"
         >
-          <div class="card-icon">◎</div>
-
           <h3>Solana</h3>
-
           <p>
             Fast, global and built for the next chapter.
           </p>
         </a>
 
-
-        <a href="#token" class="card">
-
-          <div class="card-icon">🚀</div>
-
+        <a
+          href="#token"
+          class="card"
+        >
           <h3>Bigger Plans</h3>
-
           <p>
             GOSHI starts with a simple idea.
             The community decides how far it goes.
           </p>
-
         </a>
 
       </div>
@@ -805,49 +596,71 @@
 
   <!-- TOKEN -->
 
-  <section class="token-section" id="token">
+  <section id="token">
 
-    <div class="section-container">
+    <div class="container">
 
-      <div class="eyebrow" style="text-align:center;">
-        THE TOKEN
+      <div class="section-title">
+        <span>THE TOKEN</span>
+        <h2>$GOSHI</h2>
       </div>
-
-      <h2 class="section-title">
-        Meet <span>$GOSHI</span>
-      </h2>
-
-      <p class="section-intro">
-        A Solana token built around community, memes and
-        holder rewards.
-      </p>
 
       <div class="token-box">
 
         <div class="token-row">
-          <span class="token-label">Token</span>
-          <span class="token-value gold">$GOSHI</span>
+          <span>Token</span>
+          <span>$GOSHI</span>
         </div>
 
         <div class="token-row">
-          <span class="token-label">Network</span>
-          <span class="token-value">Solana</span>
+          <span>Network</span>
+          <span>Solana</span>
         </div>
 
         <div class="token-row">
-          <span class="token-label">Total Supply</span>
-          <span class="token-value">1,000,000,000</span>
+          <span>Total Supply</span>
+          <span>1,000,000,000</span>
         </div>
 
         <div class="token-row">
-          <span class="token-label">Holder Reward Tax</span>
-          <span class="token-value gold">3% SOL REWARDS</span>
+          <span>Holder Reward Tax</span>
+          <span>3%</span>
         </div>
 
         <div class="token-row">
-          <span class="token-label">Status</span>
-          <span class="token-value">LAUNCHING SOON</span>
+          <span>Status</span>
+          <span class="live">LIVE ON SOLANA</span>
         </div>
+
+        <div class="token-row">
+          <span>Mint Address</span>
+          <span class="mint">
+            9FvXCJwj82X8eCsJBKn2nUsLuxid3vtc5GNt335ginjQ
+          </span>
+        </div>
+
+      </div>
+
+
+      <div class="token-actions">
+
+        <a
+          href="https://jup.ag/swap/SOL-9FvXCJwj82X8eCsJBKn2nUsLuxid3vtc5GNt335ginjQ"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn-gold"
+        >
+          BUY GOSHI
+        </a>
+
+        <a
+          href="https://solscan.io/token/9FvXCJwj82X8eCsJBKn2nUsLuxid3vtc5GNt335ginjQ"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn-dark"
+        >
+          VIEW ON SOLSCAN
+        </a>
 
       </div>
 
@@ -860,7 +673,7 @@
 
   <section class="cta">
 
-    <div class="section-container">
+    <div class="container">
 
       <h2>Dream Big.</h2>
 
@@ -877,30 +690,28 @@
 
   <footer>
 
-    <p>
-      © 2026 GOSHI. Built on Solana.
-    </p>
+    <div class="container">
+      GOSHI © 2026 — Built on Solana.
+    </div>
 
   </footer>
 
 
   <!-- STORY MODAL -->
 
-  <div class="modal" id="storyModal">
+  <div
+    class="modal"
+    id="storyModal"
+  >
 
     <div class="modal-content">
 
-      <button
-        class="close-modal"
-        id="closeStory"
-        aria-label="Close story"
+      <span
+        class="close"
+        onclick="closeModal()"
       >
-        ×
-      </button>
-
-      <div class="eyebrow">
-        THE STORY
-      </div>
+        &times;
+      </span>
 
       <h2>The GOSHI Story</h2>
 
@@ -908,17 +719,10 @@
         Every legend starts somewhere.
       </p>
 
-      <p>
+      <p style="margin-top: 12px;">
         GOSHI was just a bear.
-        Then he discovered crypto.
-        Now he refuses to leave.
+        Then he discovered crypto. Now he refuses to leave.
       </p>
-
-      <p>
-        Built on Solana, GOSHI is about community,
-        memes, ambition and bigger plans.
-      </p>
-
 
       <h3>Community</h3>
 
@@ -926,13 +730,11 @@
         Memes, chaos and a community built around GOSHI.
       </p>
 
-
       <h3>Solana</h3>
 
       <p>
         Fast, global and built for the next chapter.
       </p>
-
 
       <h3>Bigger Plans</h3>
 
@@ -941,45 +743,37 @@
         The community decides how far it goes.
       </p>
 
-
-      <h3>And the rewards?</h3>
-
-      <p>
-        Holders can participate in the SOL reward system
-        built into GOSHI's reward-token design.
-      </p>
-
     </div>
 
   </div>
 
 
-  <!-- JAVASCRIPT -->
-
   <script>
 
-    const storyModal = document.getElementById("storyModal");
-    const openStory = document.getElementById("openStory");
-    const closeStory = document.getElementById("closeStory");
+    function openModal() {
+      document.getElementById("storyModal").style.display = "flex";
+    }
 
-    openStory.addEventListener("click", function () {
-      storyModal.style.display = "flex";
-    });
+    function closeModal() {
+      document.getElementById("storyModal").style.display = "none";
+    }
 
-    closeStory.addEventListener("click", function () {
-      storyModal.style.display = "none";
-    });
+    window.onclick = function(event) {
 
-    storyModal.addEventListener("click", function (event) {
-      if (event.target === storyModal) {
-        storyModal.style.display = "none";
+      const modal = document.getElementById("storyModal");
+
+      if (event.target === modal) {
+        modal.style.display = "none";
       }
-    });
 
-    document.addEventListener("keydown", function (event) {
+    }
+
+    document.addEventListener("keydown", function(event) {
+
       if (event.key === "Escape") {
-        storyModal.style.display = "none";
+        closeModal();
       }
+
     });
 
   </script>
