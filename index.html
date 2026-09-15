@@ -1,200 +1,724 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GOSHI — Dream Big. Panic Bigger.</title>
-<meta name="description" content="GOSHI — Building on Solana. Dream Big. Panic Bigger.">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-*{box-sizing:border-box}
-body{
-margin:0;
-background:#050505;
-color:#f5f0e5;
-font-family:Arial,Helvetica,sans-serif;
-}
-.container{
-max-width:900px;
-margin:auto;
-padding:25px 20px 70px;
-}
-.hero{
-text-align:center;
-padding:80px 10px 60px;
-}
-.badge{
-display:inline-block;
-border:1px solid #c8a64b;
-border-radius:30px;
-padding:9px 16px;
-font-size:12px;
-letter-spacing:2px;
-color:#d8bb65;
-}
-h1{
-font-size:clamp(65px,15vw,125px);
-margin:25px 0 5px;
-letter-spacing:6px;
-color:#d8b75b;
-}
-.tag{
-font-size:clamp(19px,4vw,29px);
-font-weight:bold;
-letter-spacing:1px;
-}
-.subtitle{
-max-width:650px;
-margin:20px auto;
-color:#aaa;
-line-height:1.7;
-}
-.buttons{
-display:flex;
-justify-content:center;
-gap:12px;
-flex-wrap:wrap;
-margin-top:30px;
-}
-.button{
-display:inline-block;
-padding:14px 25px;
-border-radius:10px;
-text-decoration:none;
-font-weight:bold;
-background:#d8b75b;
-color:#050505;
-}
-.button.alt{
-background:transparent;
-border:1px solid #d8b75b;
-color:#d8b75b;
-}
-.card{
-background:#0b0b0b;
-border:1px solid #252525;
-border-radius:18px;
-padding:28px;
-margin:20px 0;
-}
-h2{
-color:#d8b75b;
-margin-top:0;
-}
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
-gap:16px;
-}
-.item{
-background:#090909;
-border:1px solid #222;
-border-radius:14px;
-padding:22px;
-}
-.item strong{
-display:block;
-margin-bottom:9px;
-font-size:18px;
-}
-.text{
-color:#aaa;
-line-height:1.6;
-}
-footer{
-text-align:center;
-color:#666;
-font-size:13px;
-margin-top:50px;
-}
-</style>
+  <title>GOSHI — Dream Big. Panic Bigger.</title>
+
+  <meta name="description" content="GOSHI — A community-driven token built on Solana. Dream big. Panic bigger.">
+  <meta name="theme-color" content="#050505">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --gold: #f6c453;
+      --gold-light: #ffe39a;
+      --gold-dark: #b87916;
+      --black: #050505;
+      --panel: #0d0d0d;
+      --border: rgba(246, 196, 83, 0.28);
+      --text: #f5f5f5;
+      --muted: #a8a8a8;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background:
+        radial-gradient(circle at 50% -10%, rgba(246,196,83,0.16), transparent 38%),
+        var(--black);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1100px, 92%);
+      margin: 0 auto;
+    }
+
+    /* NAVIGATION */
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(5,5,5,0.88);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(246,196,83,0.12);
+    }
+
+    .nav-inner {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 900;
+      letter-spacing: 2px;
+      font-size: 20px;
+    }
+
+    .brand img {
+      width: 42px;
+      height: 42px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 1px solid var(--gold);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+      font-size: 14px;
+      color: #ddd;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold);
+    }
+
+    .nav-x {
+      border: 1px solid var(--gold);
+      padding: 9px 16px;
+      border-radius: 999px;
+      color: var(--gold);
+      font-weight: 700;
+    }
+
+    .nav-x:hover {
+      background: var(--gold);
+      color: #000;
+    }
+
+    /* HERO */
+
+    .hero {
+      text-align: center;
+      padding: 80px 0 70px;
+    }
+
+    .hero-image {
+      width: min(330px, 75vw);
+      height: min(330px, 75vw);
+      object-fit: cover;
+      border-radius: 50%;
+      border: 2px solid var(--gold);
+      box-shadow:
+        0 0 35px rgba(246,196,83,0.22),
+        0 0 100px rgba(246,196,83,0.08);
+      margin-bottom: 34px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 7px 15px;
+      color: var(--gold);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: clamp(58px, 12vw, 120px);
+      line-height: 0.9;
+      letter-spacing: 5px;
+      font-weight: 1000;
+      background: linear-gradient(
+        180deg,
+        #fff0b5 0%,
+        #f6c453 38%,
+        #b87916 100%
+      );
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      text-shadow: 0 0 35px rgba(246,196,83,0.12);
+    }
+
+    .tagline {
+      margin-top: 25px;
+      font-size: clamp(20px, 4vw, 32px);
+      font-weight: 900;
+      letter-spacing: 1px;
+    }
+
+    .hero-text {
+      max-width: 680px;
+      margin: 22px auto 0;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 32px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 160px;
+      padding: 13px 22px;
+      border-radius: 10px;
+      font-weight: 800;
+      transition: 0.2s ease;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #ffe39a, #d99a25);
+      color: #080808;
+    }
+
+    .btn-secondary {
+      border: 1px solid var(--gold);
+      color: var(--gold);
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(246,196,83,0.15);
+    }
+
+    /* SECTIONS */
+
+    section {
+      padding: 75px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: clamp(30px, 5vw, 48px);
+      margin-bottom: 15px;
+    }
+
+    .section-subtitle {
+      max-width: 650px;
+      margin: 0 auto 40px;
+      text-align: center;
+      color: var(--muted);
+    }
+
+    /* STORY */
+
+    .story {
+      background: linear-gradient(
+        180deg,
+        transparent,
+        rgba(246,196,83,0.025),
+        transparent
+      );
+    }
+
+    .story-box {
+      border: 1px solid var(--border);
+      background: rgba(13,13,13,0.8);
+      border-radius: 20px;
+      padding: clamp(25px, 5vw, 50px);
+      text-align: center;
+    }
+
+    .story-box h3 {
+      color: var(--gold);
+      font-size: 27px;
+      margin-bottom: 18px;
+    }
+
+    .story-box p {
+      color: #c8c8c8;
+      max-width: 760px;
+      margin: 0 auto 12px;
+    }
+
+    /* CARDS */
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      background: linear-gradient(
+        145deg,
+        rgba(255,255,255,0.045),
+        rgba(255,255,255,0.015)
+      );
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 28px;
+      min-height: 190px;
+    }
+
+    .card-icon {
+      font-size: 28px;
+      margin-bottom: 15px;
+    }
+
+    .card h3 {
+      color: var(--gold-light);
+      margin-bottom: 10px;
+      font-size: 20px;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    /* TOKEN */
+
+    .token-box {
+      max-width: 850px;
+      margin: auto;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      overflow: hidden;
+      background: #0a0a0a;
+    }
+
+    .token-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 20px 25px;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+
+    .token-row:last-child {
+      border-bottom: none;
+    }
+
+    .token-label {
+      color: var(--muted);
+    }
+
+    .token-value {
+      color: var(--gold-light);
+      font-weight: 800;
+      text-align: right;
+    }
+
+    /* CTA */
+
+    .cta {
+      text-align: center;
+    }
+
+    .cta-box {
+      border: 1px solid var(--gold);
+      border-radius: 24px;
+      padding: clamp(35px, 7vw, 65px) 25px;
+      background:
+        radial-gradient(circle at center, rgba(246,196,83,0.10), transparent 65%),
+        #080808;
+    }
+
+    .cta h2 {
+      font-size: clamp(32px, 6vw, 58px);
+      margin-bottom: 12px;
+    }
+
+    .cta p {
+      color: var(--muted);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* FOOTER */
+
+    footer {
+      border-top: 1px solid rgba(246,196,83,0.12);
+      padding: 35px 0;
+      text-align: center;
+      color: #777;
+      font-size: 13px;
+    }
+
+    .footer-brand {
+      color: var(--gold);
+      font-weight: 900;
+      letter-spacing: 2px;
+      margin-bottom: 8px;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 750px) {
+
+      .nav-inner {
+        min-height: 64px;
+      }
+
+      .nav-links {
+        gap: 10px;
+      }
+
+      .nav-links a:not(.nav-x) {
+        display: none;
+      }
+
+      .nav-x {
+        padding: 8px 13px;
+      }
+
+      .hero {
+        padding: 55px 0 45px;
+      }
+
+      .hero-image {
+        width: 250px;
+        height: 250px;
+      }
+
+      .hero-text {
+        font-size: 15px;
+      }
+
+      section {
+        padding: 55px 0;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .card {
+        min-height: auto;
+      }
+
+      .token-row {
+        padding: 17px;
+        font-size: 14px;
+      }
+
+      .buttons {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .btn {
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 400px) {
+
+      .brand span {
+        font-size: 17px;
+      }
+
+      .hero-image {
+        width: 220px;
+        height: 220px;
+      }
+
+      h1 {
+        letter-spacing: 2px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<div class="container">
+  <!-- NAVIGATION -->
+  <nav>
+    <div class="container nav-inner">
 
-<section class="hero">
+      <a href="#top" class="brand">
+        <img src="GOSHI.jpeg" alt="GOSHI">
+        <span>GOSHI</span>
+      </a>
 
-<span class="badge">BUILDING ON SOLANA</span>
+      <div class="nav-links">
+        <a href="#story">Story</a>
+        <a href="#token">Token</a>
+        <a href="#community">Community</a>
 
-<h1>GOSHI</h1>
+        <a
+          class="nav-x"
+          href="https://x.com/GOSHICRYPTO"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          X / Twitter
+        </a>
+      </div>
 
-<div class="tag">DREAM BIG. PANIC BIGGER.</div>
+    </div>
+  </nav>
 
-<p class="subtitle">
-GOSHI is a community-driven token built on Solana.
-Big dreams, bigger memes, and a bear who refuses to leave.
-</p>
 
-<div class="buttons">
-<a class="button" href="https://x.com/GOSHICRYPTO" target="_blank">
-FOLLOW ON X
-</a>
+  <!-- HERO -->
+  <main id="top">
 
-<a class="button alt" href="#about">
-EXPLORE GOSHI
-</a>
-</div>
+    <section class="hero">
+      <div class="container">
 
-</section>
+        <img
+          class="hero-image"
+          src="GOSHI.jpeg"
+          alt="GOSHI — Dream Big. Panic Bigger."
+        >
 
-<section class="card" id="about">
+        <div class="eyebrow">BUILDING ON SOLANA</div>
 
-<h2>The GOSHI Story</h2>
+        <h1>GOSHI</h1>
 
-<p class="text">
-GOSHI was just a bear. Then he discovered crypto.
-Now he refuses to leave.
-</p>
+        <div class="tagline">
+          DREAM BIG. PANIC BIGGER.
+        </div>
 
-<p class="text">
-Built on Solana, GOSHI is about community, memes,
-ambition and bigger plans.
-</p>
+        <p class="hero-text">
+          GOSHI is a community-driven token built on Solana.
+          Big dreams, bigger memes, and a bear who refuses to leave.
+        </p>
 
-</section>
+        <div class="buttons">
 
-<section class="grid">
+          <a
+            class="btn btn-primary"
+            href="https://x.com/GOSHICRYPTO"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            FOLLOW ON X
+          </a>
 
-<div class="item">
-<strong>🐻 Community</strong>
-<span class="text">
-Built around memes, participation and the GOSHI identity.
-</span>
-</div>
+          <a class="btn btn-secondary" href="#story">
+            EXPLORE GOSHI
+          </a>
 
-<div class="item">
-<strong>⚡ Solana</strong>
-<span class="text">
-Built on the Solana network for fast and efficient transactions.
-</span>
-</div>
+        </div>
 
-<div class="item">
-<strong>🚀 Bigger Plans</strong>
-<span class="text">
-GOSHI starts with a simple idea and grows with its community.
-</span>
-</div>
+      </div>
+    </section>
 
-</section>
 
-<section class="card">
+    <!-- STORY -->
+    <section id="story" class="story">
 
-<h2>Token</h2>
+      <div class="container">
 
-<div class="grid">
+        <h2 class="section-title">
+          The GOSHI Story
+        </h2>
 
-<div class="item">
-<strong>Ticker</strong>
-<span class="text">$GOSHI</span>
-</div>
+        <p class="section-subtitle">
+          Every legend starts somewhere.
+        </p>
 
-<div class="item">
-<strong>Network</strong>
-<span class="text">Solana</span>
-</div>
+        <div class="story-box">
 
-<div class="item">
-<strong>Total Supply</strong>
+          <h3>GOSHI was just a bear.</h3>
+
+          <p>
+            Then he discovered crypto.
+            Now he refuses to leave.
+          </p>
+
+          <p>
+            Built on Solana, GOSHI is about community,
+            memes, ambition and bigger plans.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- COMMUNITY -->
+    <section id="community">
+
+      <div class="container">
+
+        <h2 class="section-title">
+          What is GOSHI?
+        </h2>
+
+        <p class="section-subtitle">
+          A simple idea with room to grow with its community.
+        </p>
+
+        <div class="cards">
+
+          <div class="card">
+            <div class="card-icon">🐻</div>
+
+            <h3>Community</h3>
+
+            <p>
+              Built around memes, participation
+              and the GOSHI identity.
+            </p>
+          </div>
+
+
+          <div class="card">
+            <div class="card-icon">⚡</div>
+
+            <h3>Solana</h3>
+
+            <p>
+              Built on the Solana network for
+              fast and efficient transactions.
+            </p>
+          </div>
+
+
+          <div class="card">
+            <div class="card-icon">🚀</div>
+
+            <h3>Bigger Plans</h3>
+
+            <p>
+              GOSHI starts with a simple idea
+              and grows with its community.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- TOKEN -->
+    <section id="token">
+
+      <div class="container">
+
+        <h2 class="section-title">
+          $GOSHI
+        </h2>
+
+        <p class="section-subtitle">
+          The GOSHI token is being built on Solana.
+        </p>
+
+        <div class="token-box">
+
+          <div class="token-row">
+            <span class="token-label">Token</span>
+            <span class="token-value">$GOSHI</span>
+          </div>
+
+          <div class="token-row">
+            <span class="token-label">Network</span>
+            <span class="token-value">Solana</span>
+          </div>
+
+          <div class="token-row">
+            <span class="token-label">Total Supply</span>
+            <span class="token-value">1,000,000,000</span>
+          </div>
+
+          <div class="token-row">
+            <span class="token-label">Holder Reward Tax</span>
+            <span class="token-value">3%</span>
+          </div>
+
+          <div class="token-row">
+            <span class="token-label">Status</span>
+            <span class="token-value">Building</span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- CTA -->
+    <section class="cta">
+
+      <div class="container">
+
+        <div class="cta-box">
+
+          <h2>
+            DREAM BIG.
+          </h2>
+
+          <p>
+            PANIC BIGGER.
+          </p>
+
+          <div class="buttons">
+
+            <a
+              class="btn btn-primary"
+              href="https://x.com/GOSHICRYPTO"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              JOIN GOSHI ON X
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer>
+
+    <div class="container">
+
+      <div class="footer-brand">
+        GOSHI
+      </div>
+
+      <div>
+        DREAM BIG. PANIC BIGGER.
+      </div>
+
+      <div style="margin-top: 8px;">
+        Built on Solana.
+      </div>
+
+    </div>
+
+  </footer>
+
+</body>
+</html>
